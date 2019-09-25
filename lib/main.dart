@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // fungsi utama untuk menjalankan project kita
@@ -12,8 +13,25 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: Text("kartu Nama"),
             backgroundColor: Colors.blueGrey,
+            actions: <Widget>[
+              IconButton(
+                  color: Colors.amberAccent,
+                  icon: Icon(Icons.add),
+                  onPressed: () {})
+            ],
           ),
-          body: tampilanUtama),
+          body: Stack(
+            children: <Widget>[
+              Container(
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: NetworkImage(
+                            "https://wallpaperaccess.com/full/729397.jpg"))),
+              ),
+              tampilanUtama
+            ],
+          )),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -47,8 +65,10 @@ class MyApp extends StatelessWidget {
       ),
       Text("7887778 / 0809796"),
       RaisedButton(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(20.0),
+                  bottomRight: Radius.circular(20.0))),
           child: Text("setyaaji07@gmail.com"),
           color: Colors.blueGrey,
           textColor: Colors.white,
