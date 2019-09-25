@@ -1,4 +1,4 @@
-# rich_app
+# mycard_app
 
 App to show that I&#x27;m rich
 
